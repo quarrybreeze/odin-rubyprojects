@@ -1,4 +1,4 @@
-dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+dictionary = %w[below down go going horn how howdy it i low own part partner sit]
 
 def substrings(string, dictionary)
   split_string = string.downcase.split(" ")
@@ -6,11 +6,8 @@ def substrings(string, dictionary)
 
   split_string.each do |string_word|
     dictionary.each do |dictionary_word|
-      if string_word.include?(dictionary_word)
-        matches[dictionary_word] += 1
-      end
+      matches[dictionary_word] += 1 if string_word.include?(dictionary_word)
     end
-
   end
   matches
 end
